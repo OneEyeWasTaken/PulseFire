@@ -1,0 +1,3 @@
+repository "pulse fire/pulse fire@18967124489524@cloud"
+  path "/"
+    smartbranch "/main"
