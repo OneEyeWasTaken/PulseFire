@@ -6,7 +6,7 @@ public class PowerUp : MonoBehaviour
 {
     public PlayerStatus status;
 
-    public void heal(float hp)
+    public virtual void heal(float hp)
     {
         status.hitPoints += hp;
         Debug.Log("Healed " + hp + " health!");

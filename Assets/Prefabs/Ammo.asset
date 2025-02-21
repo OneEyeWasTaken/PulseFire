@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d86180fd468b09c4b9ed2c7a9e90a3af, type: 3}
-  m_Name: HealthPack
+  m_Name: Ammo
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 7482667652216324306, guid: eedfde6ebeb2a5847ab96a084efe674a, type: 3}
-  lootName: HealthPack
-  lootPrefab: {fileID: 5381390746679172012, guid: 2ad7d838b55eb204abd7fac6a1f4bb0d, type: 3}
-  dropChance: 33
+  lootSprite: {fileID: -9095717837082945937, guid: 6066b11840c5e6540957e7169e804c78, type: 3}
+  lootName: Ammo
+  lootPrefab: {fileID: 3506656543177508867, guid: fcc1a6cb513bab04c92d91799a0cff54, type: 3}
+  dropChance: 100

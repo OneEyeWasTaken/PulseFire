@@ -6,9 +6,11 @@ using UnityEngine;
 public class EnemyStatus : Entity
 {
     public PlayerStatus player;
+    public Gun gun;
     public int ScoreOnDeath;
     private void Start()
     {
+        gun = GameObject.FindGameObjectWithTag("Gun").GetComponent<Gun>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -16,7 +18,7 @@ public class EnemyStatus : Entity
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             Destroy(collision.gameObject);
-            takeDamage(2);
+            takeDamage(gun.damage);
         }
     }
     public override void Die()

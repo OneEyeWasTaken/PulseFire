@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 15
+  gameover: {fileID: 0}
+  player: {fileID: 0}
   ScoreOnDeath: 20
 --- !u!58 &7790985176898328224
 CircleCollider2D:
@@ -166,6 +168,7 @@ MonoBehaviour:
   droppedItemPrefab: {fileID: 5381390746679172012, guid: 2ad7d838b55eb204abd7fac6a1f4bb0d, type: 3}
   lootList:
   - {fileID: 11400000, guid: 294cd2c3c982f1949b46ceda5f288886, type: 2}
+  - {fileID: 11400000, guid: fe837db2f5d42dd49b96632d01f02a32, type: 2}
 --- !u!1 &6450779083995678454
 GameObject:
   m_ObjectHideFlags: 0

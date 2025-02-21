@@ -9,6 +9,9 @@ TagManager:
   - PlayerBullet
   - EliteEnemy
   - Health
+  - GUI
+  - Gun
+  - Ammo
   layers:
   - Default
   - TransparentFX
