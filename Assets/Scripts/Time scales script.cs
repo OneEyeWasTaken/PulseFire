@@ -17,4 +17,9 @@ public class Timescalesscript : MonoBehaviour
         SceneManager.LoadScene("BattleField");
         Time.timeScale = 1.0f;
     }
+
+    public void QuitNow()
+    {
+        Application.Quit();
+    }
 }
