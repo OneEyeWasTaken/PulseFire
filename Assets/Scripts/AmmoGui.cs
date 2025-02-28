@@ -8,6 +8,6 @@ public class AmmoGui : MonoBehaviour
     public TextMeshProUGUI ammo;
    public void SetAmmoInfo(int totalAmmo, int ammoInMag)
     {
-        ammo.text = "Ammo: " + ammoInMag + "/" + totalAmmo;
+        ammo.text = ammoInMag + "/" + totalAmmo;
     }
 }

@@ -7,6 +7,7 @@ public class Entity : MonoBehaviour
     public static Entity main;
     public float hitPoints;
     public GameObject gameover;
+    public int currency;
     public virtual void takeDamage(float damage)
     {
         hitPoints -= damage;

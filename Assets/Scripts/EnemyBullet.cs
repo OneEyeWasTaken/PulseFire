@@ -11,7 +11,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void Awake()
     {   
-        speed = 7f;
+        speed = 5f;
         isReady = false;
     }
     public void setDirection(Vector2 direction)
@@ -21,7 +21,7 @@ public class EnemyBullet : MonoBehaviour
         isReady = true;
     }
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if(isReady)
         {

@@ -9,12 +9,10 @@ public class PlayerStatus : Entity
     [SerializeField] private TextMeshProUGUI playerScore;
     public Gun gun;
     public int score;
-    public AmmoGui gui;
     // Start is called before the first frame update
     private void Start()
     {
-        gui = FindObjectOfType<AmmoGui>();
-        gun = GameObject.FindGameObjectWithTag("Gun").GetComponent<Gun> ();
+        gun = GameObject.FindGameObjectWithTag("Gun").GetComponent<Gun>();
         playerHealth.text = "HP: " + hitPoints;
         playerScore.text = "Score: " + score;
     }
@@ -39,11 +37,13 @@ public class PlayerStatus : Entity
                 takeDamage(5);
                 updateHP();
                 break;
+
             case "Ammo":
-                gun.totalAmmo += 60;
-                Destroy(collision.gameObject);
-                gui.SetAmmoInfo(gun.totalAmmo, gun.currentAmmo);
+                    gun.PickupAmmo(60);
+                    Destroy(collision.gameObject);
+
                 break;
+
             case "Health":
                 hitPoints += 5;
                 if(hitPoints >= 15)

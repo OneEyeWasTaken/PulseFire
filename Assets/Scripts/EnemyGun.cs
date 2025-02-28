@@ -19,7 +19,7 @@ public class EnemyGun : MonoBehaviour
         if (playership != null)
         {
             timeUntilFire += Time.deltaTime;
-            if (timeUntilFire >= 1f / bulletsPerSecond)
+            if (timeUntilFire >= 1f / Random.Range(0, bulletsPerSecond))
             {
                 GameObject bullet = (GameObject)Instantiate(EnemyBullet);
                 bullet.transform.position = transform.position;

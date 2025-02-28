@@ -39,13 +39,14 @@ public class Gun : MonoBehaviour
         { 
             GameObject projectile = Instantiate(bulletPrefab, firingPoint.position, transform.rotation);
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-            rb.velocity = /*bs.speed*/8f * transform.up;
+            rb.velocity = /*bs.speed*/12f * transform.up;
                 //projectile.transform.position = firingPoint.transform.position;
                 //Pistol bulletScript = projectile.GetComponent<Pistol>();
                 nextShootTime = Time.time + shotsBetweenSeconds;
-
+            
             currentAmmo--;
-           // Debug.Log("currentAmmo: " + currentAmmo + " Total Ammo: " + totalAmmo);
+            
+           Debug.Log("currentAmmo: " + currentAmmo + " Total Ammo: " + totalAmmo);
            if(ammoGui)
             {
                 ammoGui.SetAmmoInfo(totalAmmo, currentAmmo);
@@ -83,14 +84,29 @@ public class Gun : MonoBehaviour
     public void finishReload()
     {
         reloading = false;
-        currentAmmo = ammoPerMagazine;
-        totalAmmo -= ammoPerMagazine;
-        if (totalAmmo <0)
+
+        if (totalAmmo > -ammoPerMagazine - currentAmmo)
+        {
+            totalAmmo -= ammoPerMagazine - currentAmmo;
+            currentAmmo = ammoPerMagazine;
+        }
+        if (totalAmmo < ammoPerMagazine - currentAmmo)
         {
             currentAmmo += totalAmmo;
             totalAmmo = 0;
         }
-        ammoGui.SetAmmoInfo(totalAmmo, currentAmmo);
+
+        if (totalAmmo < 0)
+        {
+            currentAmmo += totalAmmo;
+            totalAmmo = 0;
+        }
+        if (ammoGui)
+        {
+            ammoGui.SetAmmoInfo(totalAmmo, currentAmmo);
+        }
+
+
     }
     public void automaticFire()
     {
@@ -99,7 +115,12 @@ public class Gun : MonoBehaviour
             shoot();
         }
     }
-
+    public void PickupAmmo(int refill)
+    {
+        totalAmmo += refill;
+        ammoGui.SetAmmoInfo(totalAmmo, currentAmmo);
+        Debug.Log("currentAmmo: " + currentAmmo + " Total Ammo: " + totalAmmo);
+    }
     /*void Update()
     {
         Vector2 position = transform.position;
