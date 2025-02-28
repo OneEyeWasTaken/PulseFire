@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6046182535260604115}
   m_Layer: 0
   m_Name: Rifle
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +131,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2787299268546291156, guid: cc687743b0a0b7c468de56975d32d8d7, type: 3}
   firingPoint: {fileID: 4693472064458875608}
+  ammoGui: {fileID: 0}
   gunID: 2
   fireSelect: 1
   roundsPerMinute: 300
   speed: 0
+  damage: 3
+  totalAmmo: 120
+  ammoPerMagazine: 30
+  currentAmmo: 0

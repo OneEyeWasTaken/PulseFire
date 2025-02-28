@@ -14,7 +14,22 @@ public class Timescalesscript : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene("BattleField");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1.0f;
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1f;
+    }
+
+    public void QuitNow()
+    {
+        Application.Quit();
     }
 }

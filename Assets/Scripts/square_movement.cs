@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class square_movement : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class square_movement : MonoBehaviour
     public Transform handHold;
     public float movementSpeed = 5f;
     public Rigidbody2D rb;
+    private bool reloading;
+    private AmmoGui ammoGUI;
     //public Animator animator;
     Vector2 movement;
 
     private void Start()
     {
-        
+        ammoGUI = GameObject.FindGameObjectWithTag("GUI").GetComponent<AmmoGui>();
         EquipGun(0);
     }
     void EquipGun(int i)
@@ -26,6 +29,8 @@ public class square_movement : MonoBehaviour
         }
         currentGun = Instantiate(guns[i], handHold.position, handHold.rotation) as Gun;
         currentGun.transform.parent = handHold;
+        currentGun.ammoGui = ammoGUI;
+        
 
     }
     // Update is called once per frame
@@ -33,7 +38,7 @@ public class square_movement : MonoBehaviour
     {
         //inputs
         movement.x = Input.GetAxisRaw("Horizontal");
-        //movement.y = Input.GetAxisRaw("Vertical");
+        movement.y = Input.GetAxisRaw("Vertical");
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
@@ -61,6 +66,19 @@ public class square_movement : MonoBehaviour
         else if (Input.GetButton("Fire1"))
         {
             currentGun.automaticFire();
+        }
+        if (Input.GetButtonDown("Reload"))
+        {
+            if (currentGun.Reload())
+            {
+                reloading = true;
+            }
+        }
+        
+        if(reloading)
+        {
+            currentGun.finishReload();
+            reloading = false;
         }
     }
     private void FixedUpdate()
