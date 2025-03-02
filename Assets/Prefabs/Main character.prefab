@@ -317,7 +317,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -506957091, guid: eabaec78f65df2f4596c8be011202f4b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5699c5d8d5fc9b748b333b8d7b5d0c85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -375,7 +375,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 2
+  m_Constraints: 6
 --- !u!70 &4728394804402998370
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -408,8 +408,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0039996207, y: -0.012798801}
-  m_Size: {x: 0.29603928, y: 0.3584335}
+  m_Offset: {x: 0.0118002, y: -0.34214187}
+  m_Size: {x: 0.367832, y: 0.36783206}
   m_Direction: 0
 --- !u!70 &-338495900327773640
 CapsuleCollider2D:
@@ -443,8 +443,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0039996505, y: -0.012798831}
-  m_Size: {x: 0.29603922, y: 0.35843346}
+  m_Offset: {x: 0.01193437, y: -0.34361956}
+  m_Size: {x: 0.36810058, y: 0.36810058}
   m_Direction: 0
 --- !u!114 &3026097428463877191
 MonoBehaviour:
@@ -465,6 +465,8 @@ MonoBehaviour:
   handHold: {fileID: 5539697250132282997}
   movementSpeed: 5
   rb: {fileID: 6645838206367548945}
+  pistolMode: {fileID: 21300000, guid: 5699c5d8d5fc9b748b333b8d7b5d0c85, type: 3}
+  arMode: {fileID: 21300000, guid: 8f6d554ce07749040b04c9f8c653cba9, type: 3}
 --- !u!114 &-9167945652463284592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,8 +480,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 0
+  gameover: {fileID: 0}
+  currency: 0
   playerHealth: {fileID: 0}
   playerScore: {fileID: 0}
+  timerTxt: {fileID: 0}
+  rewardTxt: {fileID: 0}
+  gun: {fileID: 0}
   score: 0
 --- !u!1 &2640761453641141642
 GameObject:
@@ -506,7 +513,7 @@ Transform:
   m_GameObject: {fileID: 2640761453641141642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.124, y: 0.471, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

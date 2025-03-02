@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86180fd468b09c4b9ed2c7a9e90a3af, type: 3}
   m_Name: Ammo
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 21300000, guid: 9e2ac96634296704cb35f3770f8bc5d6, type: 3}
+  lootSprite: {fileID: 21300000, guid: 82e273730a7458945b67b841982a2b2a, type: 3}
   lootName: Ammo
   lootPrefab: {fileID: 3506656543177508867, guid: fcc1a6cb513bab04c92d91799a0cff54, type: 3}
   dropChance: 50

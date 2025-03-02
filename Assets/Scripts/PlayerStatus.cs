@@ -7,6 +7,9 @@ public class PlayerStatus : Entity
 {
     [SerializeField] private TextMeshProUGUI playerHealth;
     [SerializeField] private TextMeshProUGUI playerScore;
+    [SerializeField] private TextMeshProUGUI timerTxt;
+    [SerializeField] private TextMeshProUGUI rewardTxt;
+    private int Reward = 0;
     public Gun gun;
     public int score;
     // Start is called before the first frame update
@@ -41,7 +44,6 @@ public class PlayerStatus : Entity
             case "Ammo":
                     gun.PickupAmmo(60);
                     Destroy(collision.gameObject);
-
                 break;
 
             case "Health":
@@ -65,6 +67,8 @@ public class PlayerStatus : Entity
     }
     public override void Die()
     {
+        /*rewardTxt.text = "Rewards: " + Reward;
+        timerTxt.text = "Clear Time: ";*/
         gameover.SetActive(true);
         base.Die();
         Time.timeScale = 0f;

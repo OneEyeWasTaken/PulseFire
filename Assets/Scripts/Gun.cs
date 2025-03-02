@@ -19,9 +19,9 @@ public class Gun : MonoBehaviour
     private float shotsBetweenSeconds;
     private float nextShootTime;
 
-    public int totalAmmo;
+    public static int totalAmmo = 30;
     public int ammoPerMagazine;
-    public int currentAmmo;
+    public static int currentAmmo;
     private bool reloading;
 
     void Start()
@@ -32,7 +32,6 @@ public class Gun : MonoBehaviour
         currentAmmo = ammoPerMagazine;
         ammoGui.SetAmmoInfo(totalAmmo, currentAmmo);
     }
-
     public void shoot()
     {
         if(canShoot())
@@ -53,7 +52,6 @@ public class Gun : MonoBehaviour
             }
         }
     }
-
     private bool canShoot()
     {
         bool canshoot = true;
@@ -105,8 +103,6 @@ public class Gun : MonoBehaviour
         {
             ammoGui.SetAmmoInfo(totalAmmo, currentAmmo);
         }
-
-
     }
     public void automaticFire()
     {

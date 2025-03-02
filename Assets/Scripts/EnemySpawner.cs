@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemy;
     [Header("lower number more spawn")]
-    [SerializeField] private float maxSpawningRate = 5f;
+    [SerializeField] private float maxSpawningRate = 5f; 
     // Start is called before the first frame update
     void Start()
     {

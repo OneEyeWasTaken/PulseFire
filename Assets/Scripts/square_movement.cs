@@ -13,6 +13,8 @@ public class square_movement : MonoBehaviour
     public Rigidbody2D rb;
     private bool reloading;
     private AmmoGui ammoGUI;
+    [SerializeField] private Sprite pistolMode;
+    [SerializeField] private Sprite arMode;
     //public Animator animator;
     Vector2 movement;
 
@@ -23,10 +25,10 @@ public class square_movement : MonoBehaviour
     }
     void EquipGun(int i)
     {
-        if (currentGun)
+        /*if (currentGun)
         {
             Destroy(currentGun.gameObject);
-        }
+        }*/
         currentGun = Instantiate(guns[i], handHold.position, handHold.rotation) as Gun;
         currentGun.transform.parent = handHold;
         currentGun.ammoGui = ammoGUI;
@@ -50,22 +52,31 @@ public class square_movement : MonoBehaviour
         {
             if (Input.GetKeyDown((i + 1) + "") || Input.GetKeyDown("[" + (i + 1) + "]"))
             {
-                EquipGun(i);
+                EquipGun(i);                           
                 break;
             }
         }
 
         fireGun();
+
+        if(Input.GetKey(KeyCode.Alpha1))
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = pistolMode;
+        }
+        else if(Input.GetKey(KeyCode.Alpha2))
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = arMode;
+        }         
     }
     public void fireGun()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            currentGun.shoot();
+            currentGun.shoot();  
         }
         else if (Input.GetButton("Fire1"))
         {
-            currentGun.automaticFire();
+            currentGun.automaticFire();          
         }
         if (Input.GetButtonDown("Reload"))
         {
